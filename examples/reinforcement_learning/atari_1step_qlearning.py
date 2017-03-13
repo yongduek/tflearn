@@ -387,7 +387,7 @@ def train(session, graph_ops, num_actions, saver):
     summary_op = summary_ops[-1]
 
     # Initialize variables
-    session.run(tf.initialize_all_variables())
+    session.run(tf.global_variables_initializer())
     writer = writer_summary(summary_dir + "/qlearning", session.graph)
 
     # Initialize target network weights
